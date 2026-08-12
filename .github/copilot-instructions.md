@@ -1,0 +1,9 @@
+- This repo is the landing page for Reincarted, an original-IP geek merch brand.
+- Always use the CSS custom properties from brand.css (--void, --void-deep, --arcane, --soulflame, --loot, --parchment). Never invent new hex colors.
+- Typography: Cinzel for headings (all-caps), Press Start 2P for RPG stat labels only, Inter for body/UI. Import via the Google Fonts link in the brand kit.
+- Dark-first design: Void Indigo backgrounds, Parchment body text, Loot Gold CTAs.
+- Copy voice: snarky guild clerk. Product/feature copy may use RPG status-window format (Item / Rarity / Effect). Use approved microcopy from the brand kit.
+- Signature component: "status window" card — dashed gold inner border, pixel-font labels, teal stat values.
+- Decorative motifs: dashed gold rebirth rings, 4-point sparkles, rune ticks, soul flames. Prefer glow shadows over black shadows.
+- Mobile-first, semantic HTML, accessible contrast per the brand kit rules.
+- Never generate copy or alt text referencing copyrighted anime/game characters, series names, or logos. All IP is original.
