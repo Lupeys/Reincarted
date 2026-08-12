@@ -3,213 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reincarted | Original Isekai & TTRPG Merch</title>
+    <title>Reincarted | Reborn as merch.</title>
     <meta
       name="description"
-      content="Join the Reincarted waitlist for original isekai, anime-inspired, and TTRPG-themed print-on-demand merch. Early supporters get 15% off at launch."
+      content="Reincarted is original-IP geek merch where every soul gets a second run. Reborn as merch."
     />
-
-    <!-- Open Graph / social preview metadata -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Reincarted | Original Isekai & TTRPG Merch" />
-    <meta
-      property="og:description"
-      content="A shopping cart got reincarnated into a fantasy world. Join the waitlist for launch updates and an early supporter discount."
-    />
-    <meta property="og:url" content="https://example.com" />
-    <meta property="og:image" content="https://example.com/og-image.png" />
-
-    <!-- Twitter card metadata -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Reincarted | Original Isekai & TTRPG Merch" />
-    <meta
-      name="twitter:description"
-      content="Original geek merch with isekai + TTRPG vibes. Join the waitlist and get 15% off at launch."
-    />
-    <meta name="twitter:image" content="https://example.com/og-image.png" />
-
-    <!-- TODO: Replace PIXEL_ID with your real TikTok Pixel ID before launch -->
-    <script>
-      !(function (w, d, t) {
-        w.TiktokAnalyticsObject = t;
-        var ttq = (w[t] = w[t] || []);
-        ttq.methods = [
-          "page",
-          "track",
-          "identify",
-          "instances",
-          "debug",
-          "on",
-          "off",
-          "once",
-          "ready",
-          "alias",
-          "group",
-          "enableCookie",
-          "disableCookie"
-        ];
-        ttq.setAndDefer = function (t, e) {
-          t[e] = function () {
-            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-          };
-        };
-        for (var i = 0; i < ttq.methods.length; i++) {
-          ttq.setAndDefer(ttq, ttq.methods[i]);
-        }
-        ttq.instance = function (t) {
-          var e = ttq._i[t] || [];
-          for (var n = 0; n < ttq.methods.length; n++) {
-            ttq.setAndDefer(e, ttq.methods[n]);
-          }
-          return e;
-        };
-        ttq.load = function (e) {
-          var n = "https://analytics.tiktok.com/i18n/pixel/events.js";
-          ttq._i = ttq._i || {};
-          ttq._i[e] = [];
-          ttq._i[e]._u = n;
-          ttq._t = ttq._t || {};
-          ttq._t[e] = +new Date();
-          ttq._o = ttq._o || {};
-          ttq._o[e] = {};
-          var o = d.createElement("script");
-          o.type = "text/javascript";
-          o.async = !0;
-          o.src = n + "?sdkid=" + e + "&lib=" + t;
-          var a = d.getElementsByTagName("script")[0];
-          a.parentNode.insertBefore(o, a);
-        };
-
-        // TODO: Replace this placeholder value with your real Pixel ID.
-        ttq.load("PIXEL_ID");
-        ttq.page();
-      })(window, document, "ttq");
-    </script>
-
-    <!-- Pixel/fantasy heading font + local system body fonts -->
+    <link rel="icon" type="image/png" href="assets/reincarted-logo-primary.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="brand.css" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="wordmark" href="#top" aria-label="Reincarted home">REINCARTED</a>
-        <a
-          class="social-link"
-          href="https://www.tiktok.com/@your-handle"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit Reincarted on TikTok"
-        >
-          <span aria-hidden="true">♪</span>
-          TikTok
-        </a>
-      </header>
+    <header class="site-header" id="home">
+      <a href="#home" class="logo-link" aria-label="Reincarted Home">
+        <img
+          src="assets/reincarted-logo-primary.png"
+          alt="Reincarted logo with Rei the Wisp in a shopping cart"
+          class="site-logo"
+        />
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#lives">Lives</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <main id="top">
-        <section class="hero">
-          <!-- Headline variants you can test:
-               1) Respawn Your Style in a New World
-               2) Your Next Favorite Loot Drop Starts Here
-               3) Reborn for the Party: Original Isekai Merch -->
-          <h1>Respawn Your Style in a New World</h1>
-          <p class="hero-subhead">
-            Original isekai, anime-inspired, and TTRPG-themed print-on-demand merch starring Rei,
-            the cart reborn in a fantasy realm.
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-overlay">
+          <p id="hero-title" class="hero-tagline">REBORN AS MERCH.</p>
+          <p class="hero-subline">
+            Somewhere between this world and the next, there's a checkout line.
           </p>
+        </div>
+      </section>
 
-          <!-- TODO: Drop your Rei mascot SVG here when ready -->
-          <!-- <img src="rei-mascot.svg" alt="Rei the reincarnated shopping cart mascot" class="hero-mascot" /> -->
+      <section class="lives-section" id="lives" aria-labelledby="lives-title">
+        <h2 id="lives-title">Lives</h2>
+        <div class="lives-grid">
+          <article class="status-window life-card">
+            <h3>Tutorial Life</h3>
+            <p>System-window gear for level-1 legends filing their first quest log.</p>
+            <div class="stat-row"><span class="stat-label">Item</span><span class="stat-value">Guild UI Drip</span></div>
+            <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Uncommon</span></div>
+            <div class="stat-row"><span class="stat-label">Effect</span><span class="stat-value">+8 Focus</span></div>
+          </article>
 
-          <form id="waitlist-form" class="waitlist-form" novalidate>
-            <div class="field-wrap">
-              <label for="name">First name (optional)</label>
-              <input id="name" name="name" type="text" autocomplete="given-name" />
-            </div>
+          <article class="status-window life-card">
+            <h3>Dice Life</h3>
+            <p>TTRPG table humor for heroes who fail upward on purpose.</p>
+            <div class="stat-row"><span class="stat-label">Item</span><span class="stat-value">Nat-1 Relics</span></div>
+            <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Rare</span></div>
+            <div class="stat-row"><span class="stat-label">Effect</span><span class="stat-value">+12 CHA</span></div>
+          </article>
 
-            <div class="field-wrap">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
+          <article class="status-window life-card">
+            <h3>Tavern Life</h3>
+            <p>Cozy fantasy foodwear for potion breaks and post-battle noodles.</p>
+            <div class="stat-row"><span class="stat-label">Item</span><span class="stat-value">Campfire Comfort</span></div>
+            <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Common+</span></div>
+            <div class="stat-row"><span class="stat-label">Effect</span><span class="stat-value">+10 Warmth</span></div>
+          </article>
 
-            <!-- Honeypot field: hidden from real users, visible to simple bots -->
-            <div class="honeypot-wrap" aria-hidden="true">
-              <label for="website">Website</label>
-              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-            </div>
+          <article class="status-window life-card">
+            <h3>Respawn Life</h3>
+            <p>Roguelike permadeath jokes for players on run number eighty-four.</p>
+            <div class="stat-row"><span class="stat-label">Item</span><span class="stat-value">Run-It-Back Kit</span></div>
+            <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Epic</span></div>
+            <div class="stat-row"><span class="stat-label">Effect</span><span class="stat-value">+1 Retry</span></div>
+          </article>
 
-            <button type="submit" id="join-button">Join the Waitlist</button>
-            <p class="microcopy">Early supporters get 15% off at launch. No spam, ever.</p>
-            <p id="form-status" class="form-status" aria-live="polite"></p>
-          </form>
-        </section>
+          <article class="status-window life-card">
+            <h3>Rei</h3>
+            <p>The mascot line: one tiny wisp, one cart, infinite second chances.</p>
+            <div class="stat-row"><span class="stat-label">Item</span><span class="stat-value">Rei Core Drop</span></div>
+            <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Legendary</span></div>
+            <div class="stat-row"><span class="stat-label">Effect</span><span class="stat-value">+99 Morale</span></div>
+          </article>
+        </div>
+      </section>
 
-        <section class="expectations" aria-labelledby="expectations-title">
-          <h2 id="expectations-title">What to expect</h2>
-          <div class="card-grid">
-            <article class="info-card">
-              <h3>Original Isekai &amp; TTRPG Designs</h3>
-              <p>Fresh, in-house concepts with quest-ready style and no borrowed universes.</p>
-            </article>
-            <article class="info-card">
-              <h3>Cozy Campfire-Cooking Collection</h3>
-              <p>Warm, food-forward fantasy vibes for downtime between adventures.</p>
-            </article>
-            <article class="info-card">
-              <h3>Subscriber-Only Launch Discount</h3>
-              <p>Waitlist members unlock launch-day savings and first dibs on drops.</p>
-            </article>
-          </div>
-        </section>
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Rei</h2>
+        <div class="about-card">
+          <img
+            src="assets/reincarted-hero-cosmic.png"
+            alt="Rei the Wisp beside a rune cart on a summoning circle"
+            class="about-art"
+          />
+          <p>
+            Rei was a cheerful little spirit who missed the afterlife queue, tripped through a rune ring,
+            and respawned as a shopping cart with clerical authority. Now Rei files every soul into the
+            correct Life, stamps it with loot, and sends it back into the world looking quest-ready.
+          </p>
+        </div>
+      </section>
 
-        <section class="teasers" aria-labelledby="teasers-title">
-          <h2 id="teasers-title">Collection Teasers</h2>
-          <div class="teaser-grid">
-            <article class="teaser-card">
-              <div class="placeholder-art art-city" aria-hidden="true"></div>
-              <h3>Freelance Sorcerers in a Modern City</h3>
-              <p class="soon-label">Coming Soon</p>
-            </article>
-            <article class="teaser-card">
-              <div class="placeholder-art art-party" aria-hidden="true"></div>
-              <h3>TTRPG Party</h3>
-              <p class="soon-label">Coming Soon</p>
-            </article>
-            <article class="teaser-card">
-              <div class="placeholder-art art-camp" aria-hidden="true"></div>
-              <h3>Campfire Cooking</h3>
-              <p class="soon-label">Coming Soon</p>
-            </article>
-            <article class="teaser-card">
-              <div class="placeholder-art art-rei" aria-hidden="true"></div>
-              <h3>Mascot Rei</h3>
-              <p class="soon-label">Coming Soon</p>
-            </article>
-          </div>
-        </section>
+      <section class="cta-section" aria-labelledby="cta-title">
+        <h2 id="cta-title">Join the Cycle</h2>
+        <form class="status-window cta-form" aria-label="Newsletter signup">
+          <label for="email">Soul Mail</label>
+          <input id="email" name="email" type="email" placeholder="name@realm.com" required />
+          <button type="submit" class="btn-primary">Join the Cycle — get reborn weekly.</button>
+          <p class="empty-state">No souls yet. Summon something.</p>
+        </form>
+      </section>
+    </main>
 
-        <section class="countdown" aria-labelledby="countdown-title">
-          <h2 id="countdown-title">Portal opens in</h2>
-          <p id="countdown-timer" class="countdown-timer" aria-live="polite">Loading countdown...</p>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>We only use your email for launch updates and early supporter perks.</p>
-        <p>© <span id="year"></span> Reincarted. All rights reserved.</p>
-        <p class="social-placeholders">Socials: TikTok • Instagram • Email</p>
-      </footer>
-    </div>
-
-    <!-- Lightweight success effect container (filled by script on successful signup) -->
-    <div id="portal-burst" class="portal-burst" aria-hidden="true"></div>
+    <footer class="site-footer">
+      <p>© 2026 Reincarted. All souls reserved.</p>
+      <ul class="social-links" aria-label="Social links">
+        <li><a href="#" aria-label="Reincarted on TikTok">TikTok</a></li>
+        <li><a href="#" aria-label="Reincarted on Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Reincarted on Newsletter">Newsletter</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
