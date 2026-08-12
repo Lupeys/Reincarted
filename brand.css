@@ -1,0 +1,108 @@
+/* Reincarted Brand CSS — Brand Kit v2 */
+/* Import this in your HTML <head> before any page-specific styles */
+
+:root {
+  /* ── Core Palette ── */
+  --void: #2A1E5C;
+  --void-deep: #1B1240;
+  --arcane: #7C5CFF;
+  --soulflame: #3FE0C5;
+  --loot: #F2B84B;
+  --parchment: #F4EDDE;
+
+  /* ── Derived ── */
+  --bg-primary: var(--void);
+  --bg-secondary: var(--void-deep);
+  --bg-card: var(--void-deep);
+  --text-primary: var(--parchment);
+  --text-accent: var(--loot);
+  --text-muted: rgba(244, 237, 222, 0.55);
+  --cta-bg: var(--loot);
+  --cta-text: var(--void-deep);
+  --border-color: rgba(124, 92, 255, 0.4);
+  --glow-teal: 0 0 18px rgba(63, 224, 197, 0.35);
+  --glow-violet: 0 0 18px rgba(124, 92, 255, 0.35);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  /* ── Typography ── */
+  --font-display: "Cinzel", serif;
+  --font-pixel: "Press Start 2P", system-ui;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: linear-gradient(170deg, var(--void) 0%, var(--void-deep) 100%);
+  min-height: 100vh;
+}
+
+/* ── Utility Classes ── */
+.btn-primary {
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.btn-primary:hover {
+  box-shadow: var(--glow-teal);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--arcane);
+  color: var(--parchment);
+  border-radius: var(--radius-sm);
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.status-window {
+  border: 2px dashed var(--loot);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  background: var(--void-deep);
+}
+.status-window label {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--loot);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.status-window .stat-value {
+  font-family: var(--font-pixel);
+  color: var(--soulflame);
+  font-size: 14px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+h1 { color: var(--loot); }
+h2 { color: var(--loot); }
+h3 { color: var(--parchment); }
+
+::selection {
+  background: var(--soulflame);
+  color: var(--void-deep);
+}
