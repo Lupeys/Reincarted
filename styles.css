@@ -1,0 +1,349 @@
+/*
+  Reincarted pre-launch page styles
+  - Mobile-first layout
+  - Dark portal palette with glowing accents
+  - CSS custom properties for easy re-theming
+*/
+
+:root {
+  /* Color system */
+  --bg-primary: #090b1f;
+  --bg-secondary: #131734;
+  --bg-elevated: #1d2248;
+  --text-primary: #f6f8ff;
+  --text-secondary: #c7cdef;
+  --accent-cyan: #4ce7ff;
+  --accent-violet: #9a68ff;
+  --accent-success: #7affc7;
+  --border-soft: rgba(154, 104, 255, 0.35);
+  --focus-ring: #f9ff8d;
+  --error: #ff8aa8;
+
+  /* Spacing scale */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+
+  /* Shared UI tokens */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.2rem;
+  --max-width: 68rem;
+  --glow-cyan: 0 0 0.75rem rgba(76, 231, 255, 0.45);
+  --glow-violet: 0 0 1rem rgba(154, 104, 255, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(154, 104, 255, 0.18), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(76, 231, 255, 0.12), transparent 35%),
+    linear-gradient(180deg, var(--bg-primary), #070913 70%);
+  line-height: 1.55;
+}
+
+.site-shell {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+  padding: var(--space-4) 0 var(--space-6);
+}
+
+h1,
+h2,
+h3,
+.wordmark {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.wordmark {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-shadow: var(--glow-violet);
+}
+
+.social-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.hero,
+.expectations,
+.teasers,
+.countdown {
+  margin-bottom: var(--space-6);
+}
+
+.hero h1 {
+  font-size: clamp(1.3rem, 4.8vw, 2.35rem);
+  margin: 0 0 var(--space-3);
+  color: var(--text-primary);
+  text-shadow: var(--glow-cyan);
+}
+
+.hero-subhead {
+  margin: 0 0 var(--space-4);
+  color: var(--text-secondary);
+}
+
+.waitlist-form {
+  background: linear-gradient(160deg, rgba(29, 34, 72, 0.88), rgba(17, 21, 43, 0.9));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--glow-violet);
+}
+
+.field-wrap {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: var(--space-3);
+}
+
+.field-wrap label {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(199, 205, 239, 0.35);
+  background: rgba(9, 11, 31, 0.8);
+  color: var(--text-primary);
+}
+
+.honeypot-wrap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  color: #041016;
+  background: linear-gradient(90deg, var(--accent-cyan), #66f2de);
+  cursor: pointer;
+  box-shadow: var(--glow-cyan);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0.65rem rgba(76, 231, 255, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 1.1rem rgba(76, 231, 255, 0.95);
+  }
+}
+
+button[disabled] {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+.microcopy {
+  color: var(--text-secondary);
+  margin: var(--space-2) 0 0;
+  font-size: 0.9rem;
+}
+
+.form-status {
+  min-height: 1.4rem;
+  margin: var(--space-2) 0 0;
+  font-weight: 600;
+}
+
+.form-status.error {
+  color: var(--error);
+}
+
+.form-status.success {
+  color: var(--accent-success);
+}
+
+h2 {
+  font-size: clamp(1rem, 3.6vw, 1.35rem);
+  margin: 0 0 var(--space-3);
+}
+
+.card-grid,
+.teaser-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.info-card,
+.teaser-card {
+  background: linear-gradient(170deg, rgba(19, 23, 52, 0.95), rgba(10, 13, 31, 0.95));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.info-card p,
+.teaser-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.placeholder-art {
+  border-radius: var(--radius-sm);
+  min-height: 6.5rem;
+  margin-bottom: var(--space-2);
+  border: 1px solid rgba(76, 231, 255, 0.3);
+  background-size: cover;
+}
+
+/* CSS-only placeholder themes (no image assets needed) */
+.art-city {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(154, 104, 255, 0.35) 0 8px, transparent 8px 14px),
+    linear-gradient(180deg, #3b2f74, #10183f);
+}
+
+.art-party {
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(122, 255, 199, 0.7), transparent 25%),
+    radial-gradient(circle at 70% 60%, rgba(76, 231, 255, 0.7), transparent 20%),
+    linear-gradient(180deg, #1e2c61, #10122b);
+}
+
+.art-camp {
+  background-image:
+    radial-gradient(circle at 50% 70%, rgba(255, 183, 94, 0.8), transparent 20%),
+    linear-gradient(180deg, #253462, #161f3e);
+}
+
+.art-rei {
+  background-image:
+    conic-gradient(from 180deg at 50% 50%, rgba(154, 104, 255, 0.9), rgba(76, 231, 255, 0.9), rgba(154, 104, 255, 0.9));
+}
+
+.soon-label {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+}
+
+.countdown-timer {
+  margin: 0;
+  font-size: 1.12rem;
+  color: var(--text-secondary);
+}
+
+.site-footer {
+  border-top: 1px solid rgba(199, 205, 239, 0.2);
+  padding-top: var(--space-3);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.social-placeholders {
+  margin-bottom: 0;
+}
+
+/************ Accessibility enhancements ************/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/************ Success portal burst animation ************/
+.portal-burst {
+  pointer-events: none;
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.portal-burst.active {
+  opacity: 1;
+}
+
+.portal-burst.active::before,
+.portal-burst.active::after {
+  content: "";
+  position: absolute;
+  inset: -1.5rem;
+  border-radius: 50%;
+  border: 2px solid rgba(76, 231, 255, 0.8);
+  box-shadow: 0 0 1rem rgba(154, 104, 255, 0.7);
+  animation: portalExpand 700ms ease-out forwards;
+}
+
+.portal-burst.active::after {
+  border-color: rgba(154, 104, 255, 0.85);
+  animation-delay: 120ms;
+}
+
+@keyframes portalExpand {
+  0% {
+    transform: scale(0.35);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.6);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 48rem) {
+  .site-shell {
+    width: min(100% - 3.5rem, var(--max-width));
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

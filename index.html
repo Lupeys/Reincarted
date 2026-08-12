@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reincarted | Original Isekai & TTRPG Merch</title>
+    <meta
+      name="description"
+      content="Join the Reincarted waitlist for original isekai, anime-inspired, and TTRPG-themed print-on-demand merch. Early supporters get 15% off at launch."
+    />
+
+    <!-- Open Graph / social preview metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Reincarted | Original Isekai & TTRPG Merch" />
+    <meta
+      property="og:description"
+      content="A shopping cart got reincarnated into a fantasy world. Join the waitlist for launch updates and an early supporter discount."
+    />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="https://example.com/og-image.png" />
+
+    <!-- Twitter card metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reincarted | Original Isekai & TTRPG Merch" />
+    <meta
+      name="twitter:description"
+      content="Original geek merch with isekai + TTRPG vibes. Join the waitlist and get 15% off at launch."
+    />
+    <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+    <!-- TODO: Replace PIXEL_ID with your real TikTok Pixel ID before launch -->
+    <script>
+      !(function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = (w[t] = w[t] || []);
+        ttq.methods = [
+          "page",
+          "track",
+          "identify",
+          "instances",
+          "debug",
+          "on",
+          "off",
+          "once",
+          "ready",
+          "alias",
+          "group",
+          "enableCookie",
+          "disableCookie"
+        ];
+        ttq.setAndDefer = function (t, e) {
+          t[e] = function () {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+          ttq.setAndDefer(ttq, ttq.methods[i]);
+        }
+        ttq.instance = function (t) {
+          var e = ttq._i[t] || [];
+          for (var n = 0; n < ttq.methods.length; n++) {
+            ttq.setAndDefer(e, ttq.methods[n]);
+          }
+          return e;
+        };
+        ttq.load = function (e) {
+          var n = "https://analytics.tiktok.com/i18n/pixel/events.js";
+          ttq._i = ttq._i || {};
+          ttq._i[e] = [];
+          ttq._i[e]._u = n;
+          ttq._t = ttq._t || {};
+          ttq._t[e] = +new Date();
+          ttq._o = ttq._o || {};
+          ttq._o[e] = {};
+          var o = d.createElement("script");
+          o.type = "text/javascript";
+          o.async = !0;
+          o.src = n + "?sdkid=" + e + "&lib=" + t;
+          var a = d.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(o, a);
+        };
+
+        // TODO: Replace this placeholder value with your real Pixel ID.
+        ttq.load("PIXEL_ID");
+        ttq.page();
+      })(window, document, "ttq");
+    </script>
+
+    <!-- Pixel/fantasy heading font + local system body fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Reincarted home">REINCARTED</a>
+        <a
+          class="social-link"
+          href="https://www.tiktok.com/@your-handle"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Reincarted on TikTok"
+        >
+          <span aria-hidden="true">♪</span>
+          TikTok
+        </a>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <!-- Headline variants you can test:
+               1) Respawn Your Style in a New World
+               2) Your Next Favorite Loot Drop Starts Here
+               3) Reborn for the Party: Original Isekai Merch -->
+          <h1>Respawn Your Style in a New World</h1>
+          <p class="hero-subhead">
+            Original isekai, anime-inspired, and TTRPG-themed print-on-demand merch starring Rei,
+            the cart reborn in a fantasy realm.
+          </p>
+
+          <!-- TODO: Drop your Rei mascot SVG here when ready -->
+          <!-- <img src="rei-mascot.svg" alt="Rei the reincarnated shopping cart mascot" class="hero-mascot" /> -->
+
+          <form id="waitlist-form" class="waitlist-form" novalidate>
+            <div class="field-wrap">
+              <label for="name">First name (optional)</label>
+              <input id="name" name="name" type="text" autocomplete="given-name" />
+            </div>
+
+            <div class="field-wrap">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <!-- Honeypot field: hidden from real users, visible to simple bots -->
+            <div class="honeypot-wrap" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" id="join-button">Join the Waitlist</button>
+            <p class="microcopy">Early supporters get 15% off at launch. No spam, ever.</p>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="expectations" aria-labelledby="expectations-title">
+          <h2 id="expectations-title">What to expect</h2>
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Original Isekai &amp; TTRPG Designs</h3>
+              <p>Fresh, in-house concepts with quest-ready style and no borrowed universes.</p>
+            </article>
+            <article class="info-card">
+              <h3>Cozy Campfire-Cooking Collection</h3>
+              <p>Warm, food-forward fantasy vibes for downtime between adventures.</p>
+            </article>
+            <article class="info-card">
+              <h3>Subscriber-Only Launch Discount</h3>
+              <p>Waitlist members unlock launch-day savings and first dibs on drops.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="teasers" aria-labelledby="teasers-title">
+          <h2 id="teasers-title">Collection Teasers</h2>
+          <div class="teaser-grid">
+            <article class="teaser-card">
+              <div class="placeholder-art art-city" aria-hidden="true"></div>
+              <h3>Freelance Sorcerers in a Modern City</h3>
+              <p class="soon-label">Coming Soon</p>
+            </article>
+            <article class="teaser-card">
+              <div class="placeholder-art art-party" aria-hidden="true"></div>
+              <h3>TTRPG Party</h3>
+              <p class="soon-label">Coming Soon</p>
+            </article>
+            <article class="teaser-card">
+              <div class="placeholder-art art-camp" aria-hidden="true"></div>
+              <h3>Campfire Cooking</h3>
+              <p class="soon-label">Coming Soon</p>
+            </article>
+            <article class="teaser-card">
+              <div class="placeholder-art art-rei" aria-hidden="true"></div>
+              <h3>Mascot Rei</h3>
+              <p class="soon-label">Coming Soon</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="countdown" aria-labelledby="countdown-title">
+          <h2 id="countdown-title">Portal opens in</h2>
+          <p id="countdown-timer" class="countdown-timer" aria-live="polite">Loading countdown...</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>We only use your email for launch updates and early supporter perks.</p>
+        <p>© <span id="year"></span> Reincarted. All rights reserved.</p>
+        <p class="social-placeholders">Socials: TikTok • Instagram • Email</p>
+      </footer>
+    </div>
+
+    <!-- Lightweight success effect container (filled by script on successful signup) -->
+    <div id="portal-burst" class="portal-burst" aria-hidden="true"></div>
+  </body>
+</html>
