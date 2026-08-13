@@ -1,14 +1,16 @@
 // Reincarted — "Join the Cycle" email capture.
 // Zero-dependency version: posts straight to the Supabase REST (PostgREST)
 // endpoint with fetch(), so no third-party CDN script can fail to load and
-// silently break the form. The publishable key below is safe to expose:
+// silently break the form. The anon key below is safe to expose:
 // Row Level Security on email_captures allows anonymous INSERTs only.
 
 (function () {
   "use strict";
 
   var SUPABASE_URL = "https://lqqxazmmhkylwyrgyhmb.supabase.co";
-  var SUPABASE_PUBLISHABLE_KEY = "sb_publishable_rx7R2aUW05Ez18mTLPd7ZQ_PTiPImkW";
+  // Legacy anon JWT — used instead of the sb_publishable_ key because raw
+  // PostgREST calls can reject non-JWT bearer tokens.
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxcXhhem1taGt5bHd5cmd5aG1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1NjY0ODEsImV4cCI6MjEwMjE0MjQ4MX0.VKZ_-jrOH9XlsaDAoothG_coKXcLdm9cog_JsiLOAYs";
   var ENDPOINT = SUPABASE_URL + "/rest/v1/email_captures";
 
   var form = document.getElementById("waitlist-form");
@@ -58,8 +60,8 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          apikey: SUPABASE_PUBLISHABLE_KEY,
-          Authorization: "Bearer " + SUPABASE_PUBLISHABLE_KEY,
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: "Bearer " + SUPABASE_ANON_KEY,
           Prefer: "return=minimal",
         },
         body: JSON.stringify({ email: email, source: "landing-hero" }),
@@ -85,10 +87,14 @@
         // Check violation: failed the database email format check.
         setStatus("That soul mail doesn't look right. Check the spelling.", "error");
       } else {
-        setStatus("The portal hiccuped. Try again in a moment.", "error");
+        // Surface the real error so failures are debuggable from a screenshot.
+        var detail = errorBody && (errorBody.message || errorBody.code)
+          ? " (" + response.status + ": " + (errorBody.message || errorBody.code) + ")"
+          : " (HTTP " + response.status + ")";
+        setStatus("The portal hiccuped" + detail + ". Try again in a moment.", "error");
       }
     } catch (networkError) {
-      setStatus("The portal hiccuped. Try again in a moment.", "error");
+      setStatus("The portal hiccuped (network blocked). Try again in a moment.", "error");
     } finally {
       submitButton.disabled = false;
     }
