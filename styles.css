@@ -741,7 +741,9 @@ h3 {
   }
 
   .wordmark {
-    display: none;
+    display: inline;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
   }
 
   .header-actions {
