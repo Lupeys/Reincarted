@@ -17,6 +17,8 @@
     />
     <link rel="stylesheet" href="brand.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header" id="home">
@@ -109,10 +111,15 @@
 
       <section class="cta-section" aria-labelledby="cta-title">
         <h2 id="cta-title">Join the Cycle</h2>
-        <form class="status-window cta-form" aria-label="Newsletter signup">
+        <form id="waitlist-form" class="status-window cta-form" aria-label="Newsletter signup">
           <label for="email">Soul Mail</label>
-          <input id="email" name="email" type="email" placeholder="name@realm.com" required />
+          <input id="email" name="email" type="email" placeholder="name@realm.com" autocomplete="email" required />
+          <div class="honeypot-wrap" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <button type="submit" class="btn-primary">Join the Cycle — get reborn weekly.</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
           <p class="empty-state">No souls yet. Summon something.</p>
         </form>
       </section>
